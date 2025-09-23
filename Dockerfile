@@ -12,6 +12,7 @@ ENV PATH="/app/.venv/bin:${PATH}" \
     PYTHONUNBUFFERED="1" \
     TZ="Etc/UTC"
 
+COPY --chown=python:python src ./src
 COPY --chown=python:python tools/update-tmr-data-set.py ./tools/
 
 ENTRYPOINT ["uv", "run", "--no-sync"]

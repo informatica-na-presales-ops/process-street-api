@@ -10,25 +10,24 @@ requires-python = ">=3.13"
 license = "MIT"
 dependencies = [
     "httpx>=0.28.1",
+    "psycopg2-binary>=2.9.10",
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/williamjacksn/process-street-api"
-"Issues" = "https://github.com/williamjacksn/process-street-api/issues"
+"Homepage" = "https://github.com/informatica-na-presales-ops/process-street-api"
+"Issues" = "https://github.com/informatica-na-presales-ops/process-street-api/issues"
 
 [build-system]
-requires = ["uv-build>=0.8.15,<0.9.0"]
+requires = ["uv-build>=0.8.21,<0.9.0"]
 build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
-    "ruff>=0.12.12",
-    "uv-build>=0.8.15",
-]
-test = [
-    "coverage>=7.8.2",
+    "coverage>=7.10.7",
     "dotenv>=0.9.9",
+    "ruff>=0.13.1",
+    "uv-build>=0.8.21",
 ]
 
 [tool.ruff.lint]
-select = ["E4", "E7", "E9", "F", "I"]
+select = ["E", "F", "I"]

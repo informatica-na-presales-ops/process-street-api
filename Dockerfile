@@ -4,6 +4,7 @@ RUN /usr/sbin/useradd --create-home --shell /bin/bash --user-group python
 USER python
 
 WORKDIR /app
+COPY --chown=python:python src ./src
 COPY --chown=python:python .python-version pyproject.toml uv.lock ./
 RUN uv sync --frozen --no-default-groups
 
@@ -12,7 +13,6 @@ ENV PATH="/app/.venv/bin:${PATH}" \
     PYTHONUNBUFFERED="1" \
     TZ="Etc/UTC"
 
-COPY --chown=python:python src ./src
 COPY --chown=python:python tools/update-tmr-data-set.py ./tools/
 
 ENTRYPOINT ["uv", "run", "--no-sync"]

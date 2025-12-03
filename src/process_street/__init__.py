@@ -10,7 +10,7 @@ class ProcessStreetClient:
     api_key: str
     base_url: str = "https://public-api.process.st/api/v1.1"
 
-    def call(self, url: str, method: str = "GET", params: dict = None) -> dict:
+    def call(self, url: str, method: str = "GET", params: dict | None = None) -> dict:
         headers = {"X-API-Key": self.api_key}
         if params is None:
             params = {}
@@ -23,10 +23,10 @@ class ProcessStreetClient:
     def data_sets(self) -> list["DataSet"]:
         return [DataSet(self, d) for d in self.get_data_sets().get("dataSets")]
 
-    def get_data_sets(self):
+    def get_data_sets(self) -> dict:
         return self.call("/data-sets")
 
-    def get_test_auth(self):
+    def get_test_auth(self) -> dict:
         return self.call("/testAuth")
 
     def yield_data_set_records(
@@ -89,7 +89,7 @@ class ProcessStreetClient:
 
 
 class DataSet:
-    def __init__(self, client: ProcessStreetClient, data: dict):
+    def __init__(self, client: ProcessStreetClient, data: dict) -> None:
         self.client = client
         self.data = data
 
@@ -115,7 +115,7 @@ class DataSet:
 
 
 class DataSetField:
-    def __init__(self, data: dict):
+    def __init__(self, data: dict) -> None:
         self.data = data
 
     @property
@@ -132,7 +132,7 @@ class DataSetField:
 
 
 class DataSetRecord:
-    def __init__(self, data: dict):
+    def __init__(self, data: dict) -> None:
         self.data = data
 
     @property

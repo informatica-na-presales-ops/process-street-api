@@ -7,14 +7,14 @@ class Args:
     groups_file: pathlib.Path
 
 
-def parse_args():
+def parse_args() -> Args:
     parser = argparse.ArgumentParser()
     parser.add_argument("groups_file", type=pathlib.Path)
     ns = Args()
     return parser.parse_args(namespace=ns)
 
 
-def main():
+def main() -> None:
     args = parse_args()
     data = json.loads(args.groups_file.read_text())
     for g in data:

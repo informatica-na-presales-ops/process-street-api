@@ -29,4 +29,4 @@ dev = [
 ]
 
 [tool.ruff.lint]
-select = ["E", "F", "I"]
+select = ["ANN", "E", "F", "FURB", "I", "PERF", "RUF", "S", "UP"]

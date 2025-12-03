@@ -17,7 +17,7 @@ dependencies = [
 "Issues" = "https://github.com/informatica-na-presales-ops/process-street-api/issues"
 
 [build-system]
-requires = ["uv-build>=0.8.21,<0.9.0"]
+requires = ["uv-build>=0.8.21,<0.10.0"]
 build-backend = "uv_build"
 
 [dependency-groups]

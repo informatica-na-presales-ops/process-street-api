@@ -166,7 +166,7 @@ dev = [
     { name = "coverage", specifier = ">=7.10.7" },
     { name = "dotenv", specifier = ">=0.9.9" },
     { name = "ruff", specifier = ">=0.13.1" },
-    { name = "uv-build", specifier = ">=0.8.21" },
+    { name = "uv-build", specifier = ">=0.9.15" },
 ]
 
 [[package]]

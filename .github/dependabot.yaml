@@ -4,10 +4,6 @@ updates:
     directory: /
     schedule:
       interval: weekly
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: weekly
   - package-ecosystem: uv
     allow:
       - dependency-type: all

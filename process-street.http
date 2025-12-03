@@ -1,3 +1,73 @@
+### get-scim-groups
+GET https://public-api.process.st/api/scim/Groups
+X-API-Key: {{api-key}}
+
+### get-scim-group
+GET https://public-api.process.st/api/scim/Groups/{{group-id}}
+X-API-Key: {{api-key}}
+
+### patch-scim-group-add-member
+PATCH https://public-api.process.st/api/scim/Groups/{{group-id}}
+Content-Type: application/scim+json
+X-API-Key: {{api-key}}
+
+{
+  "Operations": [{
+    "op": "Add",
+    "path": "members",
+    "value": [{
+      "value": "{{user-id}}"
+    }]
+  }],
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"]
+}
+
+### patch-scim-group-delete-member
+PATCH https://public-api.process.st/api/scim/Groups/{{group-id}}
+Content-Type: application/scim+json
+X-API-Key: {{api-key}}
+
+{
+  "Operations": [{
+    "op": "Remove",
+    "path": "members",
+    "value": [{
+      "value": "{{user-id}}"
+    }]
+  }],
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"]
+}
+
+### get-scim-resource-types
+GET https://public-api.process.st/api/scim/ResourceTypes/Group
+X-API-Key: {{api-key}}
+
+### get-scim-schemas
+GET https://public-api.process.st/api/scim/Schemas
+X-API-Key: {{api-key}}
+
+### get-scim-service-provider-config
+GET https://public-api.process.st/api/scim/ServiceProviderConfig
+X-API-Key: {{api-key}}
+
+### get-scim-users
+GET https://public-api.process.st/api/scim/Users?count=100
+X-API-Key: {{api-key}}
+
+### scim-create-user
+POST https://public-api.process.st/api/scim/Users
+Content-Type: application/scim+json
+X-API-Key: {{api-key}}
+
+{
+  "schemas":["urn:ietf:params:scim:schemas:core:2.0:User"],
+  "userName": "{{test-email}}",
+  "externalId": "{{test-email}}",
+  "name": {
+    "formatted": "{{test-name}}"
+  }
+}
+
 ### get-test-auth
 GET https://public-api.process.st/api/v1.1/testAuth
 X-API-Key: {{api-key}}
@@ -18,8 +88,35 @@ X-API-Key: {{api-key}}
 GET https://public-api.process.st/api/v1.1/users
 X-API-Key: {{api-key}}
 
+### get-workflow-run
+GET https://public-api.process.st/api/v1.1/workflow-runs/{{workflow-run-id}}
+X-API-Key: {{api-key}}
+
+### update-workflow-run
+PUT https://public-api.process.st/api/v1.1/workflow-runs/{{workflow-run-id}}
+Content-Type: application/json
+X-API-Key: {{api-key}}
+
+{
+  "name": "{{workflow-run-name}}",
+  "shared": false,
+  "status": "Archived"
+}
+
+### get-workflow-run-tasks
+GET https://public-api.process.st/api/v1.1/workflow-runs/{{workflow-run-id}}/tasks
+X-API-Key: {{api-key}}
+
+### assign-task
+PUT https://public-api.process.st/api/v1.1/workflow-runs/{{workflow-run-id}}/tasks/{{task-id}}/assignees/{{assignee-email}}
+X-API-Key: {{api-key}}
+
 ### get-workflows
 GET https://public-api.process.st/api/v1.1/workflows
+X-API-Key: {{api-key}}
+
+### get-workflow-form-fields
+GET https://public-api.process.st/api/v1.1/workflows/{{workflow-id}}/form-fields
 X-API-Key: {{api-key}}
 
 ### get-workflow-tasks

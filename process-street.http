@@ -54,6 +54,11 @@ X-API-Key: {{api-key}}
 GET https://public-api.process.st/api/scim/Users?count=100
 X-API-Key: {{api-key}}
 
+### get-scim-user
+GET https://public-api.process.st/api/scim/Users/{{user-id}}
+X-API-Key: {{api-key}}
+
+
 ### scim-create-user
 POST https://public-api.process.st/api/scim/Users
 Content-Type: application/scim+json

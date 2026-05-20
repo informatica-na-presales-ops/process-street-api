@@ -17,16 +17,16 @@ dependencies = [
 "Issues" = "https://github.com/informatica-na-presales-ops/process-street-api/issues"
 
 [build-system]
-requires = ["uv-build>=0.9.15,<0.12.0"]
+requires = ["uv-build>=0.11.15,<0.12.0"]
 build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
     "coverage>=7.14.0",
     "dotenv>=0.9.9",
-    "ruff>=0.15.12",
-    "ty>=0.0.37",
-    "uv-build>=0.9.15",
+    "ruff>=0.15.13",
+    "ty>=0.0.38",
+    "uv-build>=0.11.15",
 ]
 
 [tool.ruff.lint]

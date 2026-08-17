@@ -24,7 +24,7 @@ build-backend = "uv_build"
 dev = [
     "coverage>=7.15.2",
     "dotenv>=0.9.9",
-    "ruff>=0.16.1",
+    "ruff>=0.16.3",
     "ty>=0.0.65",
     "uv-build>=0.11.15",
 ]
